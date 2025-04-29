@@ -28,3 +28,7 @@ spec:
             port: 80
           initialDelaySeconds: 3
           periodSeconds: 5
+      - name: redis
+        image: redis:latest
+        ports:
+        - containerPort: 6379
