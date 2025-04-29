@@ -3,13 +3,13 @@ kind: Ingress
 metadata:
   name: nginx-ingress
   annotations:
-    alb.ingress.kubernetes.io/load-balancer-name: woitekku2
+    alb.ingress.kubernetes.io/load-balancer-name: woitekku
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/backend-protocol: HTTP
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
     alb.ingress.kubernetes.io/certificate-arn: 'arn:aws:acm:eu-central-1:164820026678:certificate/70648ebf-a43d-483c-a229-d5d24316dd3a'
-    alb.ingress.kubernetes.io/group.name: woitekku2
+    alb.ingress.kubernetes.io/group.name: woitekku
     external-dns.alpha.kubernetes.io/hostname: app.workshop.cichy.io
 spec:
   ingressClassName: alb
