@@ -19,7 +19,7 @@ spec:
         image: nginx:latest
         env:
           - name: API_KEY
-            value: 123
+            value: "123"
         ports:
         - containerPort: 80
         readinessProbe:
