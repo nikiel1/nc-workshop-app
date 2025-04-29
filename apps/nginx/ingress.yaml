@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nginx-ingress
+  ingressClassName: alb
   annotations:
     alb.ingress.kubernetes.io/load-balancer-name: woitekku
     alb.ingress.kubernetes.io/scheme: internet-facing
