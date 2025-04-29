@@ -16,7 +16,10 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:new
+        image: nginx:latest
+        env:
+          - name: API_KEY
+            value: 123
         ports:
         - containerPort: 80
         readinessProbe:
