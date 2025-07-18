@@ -17,6 +17,9 @@ spec:
       containers:
       - name: nginx
         image: nginx:latest
+        env:
+          - name: API_KEY
+            value: "123"
         ports:
         - containerPort: 80
         readinessProbe:
@@ -25,3 +28,7 @@ spec:
             port: 80
           initialDelaySeconds: 3
           periodSeconds: 5
+      - name: redis
+        image: redis:latest
+        ports:
+        - containerPort: 6379
