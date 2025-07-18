@@ -43,7 +43,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: 164820026678.dkr.ecr.eu-central-1.amazonaws.com/docker/adservice:v0.10.1
+        image: woitekku/adservice:latest
         ports:
         - containerPort: 9555
         env:
