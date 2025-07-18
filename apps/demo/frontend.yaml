@@ -123,21 +123,20 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: app2-ingress
+  name: demo-ingress
   annotations:
-    kubernetes.io/ingress.class: alb
-    alb.ingress.kubernetes.io/load-balancer-name: eks-gurus
+    alb.ingress.kubernetes.io/load-balancer-name: woitekku
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/backend-protocol: HTTP
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
-    alb.ingress.kubernetes.io/subnets: subnet-0521a083e66d6cc4c,subnet-02cfbf10d95a4b77d,subnet-0575cea0f1a1cac41
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-central-1:164820026678:certificate/2f0809cd-40fd-4811-aa81-c5c8cc6d623b
-    alb.ingress.kubernetes.io/group.name: "unified"
+    alb.ingress.kubernetes.io/certificate-arn: 'arn:aws:acm:eu-central-1:164820026678:certificate/70648ebf-a43d-483c-a229-d5d24316dd3a'
+    alb.ingress.kubernetes.io/group.name: woitekku
+    external-dns.alpha.kubernetes.io/hostname: demo.workshop.cichy.io
 spec:
   ingressClassName: alb
   rules:
-  - host: frontend.rzezba-ecs.pl
+  - host: demo.workshop.cichy.io
     http:
       paths:
       - backend:
