@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nginx-app
+  name: demo-app
   namespace: argo-cd
 spec:
   project: default
   source:
     repoURL: https://github.com/Woitekku/nc-workshop-app
     targetRevision: HEAD
-    path: apps/nginx
+    path: apps/demp
   destination:
     server: https://kubernetes.default.svc
     namespace: default
@@ -16,3 +16,4 @@ spec:
     automated:
       prune: true
       selfHeal: true
+
