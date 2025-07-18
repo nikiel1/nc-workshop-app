@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/Woitekku/nc-workshop-app
     targetRevision: HEAD
-    path: apps/demp
+    path: apps/demo
   destination:
     server: https://kubernetes.default.svc
     namespace: default
