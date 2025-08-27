@@ -1,0 +1,42 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    alb.ingress.kubernetes.io/backend-protocol: HTTP
+    alb.ingress.kubernetes.io/certificate-arn: >-
+      arn:aws:acm:eu-central-1:164820026678:certificate/70648ebf-a43d-483c-a229-d5d24316dd3a
+    alb.ingress.kubernetes.io/group.name: woitekku
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/load-balancer-name: woitekku
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    external-dns.alpha.kubernetes.io/hostname: kagent.workshop.cichy.io
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"alb.ingress.kubernetes.io/backend-protocol":"HTTP","alb.ingress.kubernetes.io/certificate-arn":"arn:aws:acm:eu-central-1:164820026678:certificate/70648ebf-a43d-483c-a229-d5d24316dd3a","alb.ingress.kubernetes.io/group.name":"woitekku","alb.ingress.kubernetes.io/listen-ports":"[{\"HTTPS\":443}]","alb.ingress.kubernetes.io/load-balancer-name":"woitekku","alb.ingress.kubernetes.io/scheme":"internet-facing","alb.ingress.kubernetes.io/target-type":"ip","external-dns.alpha.kubernetes.io/hostname":"kagent.workshop.cichy.io"},"labels":{"argocd.argoproj.io/instance":"kagent-app"},"name":"kagent-ingress","namespace":"default"},"spec":{"ingressClassName":"alb","rules":[{"host":"kagent.workshop.cichy.io","http":{"paths":[{"backend":{"service":{"name":"frontend","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}}]}}
+  creationTimestamp: '2025-07-18T10:15:48Z'
+  finalizers:
+    - group.ingress.k8s.aws/woitekku
+  generation: 1
+  labels:
+    argocd.argoproj.io/instance: kagent-app
+  name: kagent-ingress
+  namespace: kagent
+  resourceVersion: '39775848'
+  uid: db37a91e-b138-4425-899b-45762ab76f6d
+spec:
+  ingressClassName: alb
+  rules:
+    - host: kagent.workshop.cichy.io
+      http:
+        paths:
+          - backend:
+              service:
+                name: frontend
+                port:
+                  number: 80
+            path: /
+            pathType: Prefix
+status:
+  loadBalancer:
+    ingress:
+      - hostname: woitekku-1160636717.eu-central-1.elb.amazonaws.com
